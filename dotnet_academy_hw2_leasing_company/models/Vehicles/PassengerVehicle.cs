@@ -12,7 +12,8 @@ namespace dotnet_academy_hw2_leasing_company.models.Vehicles
         public PassengerVehicle(int id, string brand, Color color, string model, DateOnly prodYear, decimal price, string registrationNumber, DateTime serviceStartTime, double mileage = 0) 
             : base(id, brand, color, model, prodYear, price, registrationNumber, serviceStartTime, mileage)
         {
-
+            _yearsInServiceLimit = 5;
+            _mileageLimit = 100000;
         }
 
         public override decimal GetCurrentValue()
@@ -24,6 +25,13 @@ namespace dotnet_academy_hw2_leasing_company.models.Vehicles
                 result = result - (result * (decimal)0.1);
             }
             return result;
+        }
+
+        public override bool HasExceededTenure()
+        {
+            var isTimeExceeded = ServiceStartTime.AddYears(_yearsInServiceLimit) < DateTime.Now;
+            var isMileageExceeded = Mileage > _mileageLimit;
+            return isTimeExceeded || isMileageExceeded;
         }
     }
 }

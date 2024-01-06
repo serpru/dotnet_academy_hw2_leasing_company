@@ -16,17 +16,21 @@ namespace dotnet_academy_hw2_leasing_company.models.VehicleWarehouse
         {
             Vehicles = vehicles;
         }
-        public ICollection<Vehicle> ShowBrand(string brandName)
+        public IEnumerable<Vehicle> FilterByBrand(string brandName)
         {
-            throw new NotImplementedException();
+            var result = Vehicles.Where(v => v.Brand.Equals(brandName));
+            return result;
         }
-        public ICollection<Vehicle> ShowExceededTenure()
+        public ICollection<Vehicle> FilterByExceededTenure(string model)
         {
+            var result = Vehicles
+                .Where(v => v.Model.Equals(model))
+                .Where(v => v.HasExceededTenure().Equals(true));
             throw new NotImplementedException();
         }
         public decimal GetTotalVehiclesValue() { throw new NotImplementedException(); }
-        public ICollection<Vehicle> ShowPreferred(string brandName, Color color) { throw new NotImplementedException(); }
-        public ICollection<Vehicle> ShowCloseToMaintenance() { throw new NotImplementedException(); }
+        public ICollection<Vehicle> FilterByBrandOrColor(string brandName, Color color) { throw new NotImplementedException(); }
+        public ICollection<Vehicle> FilterByCloseToMaintenance() { throw new NotImplementedException(); }
 
     }
 }

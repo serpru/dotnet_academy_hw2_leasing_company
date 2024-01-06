@@ -9,10 +9,13 @@ namespace dotnet_academy_hw2_leasing_company.models.Vehicles
 {
     public abstract class Vehicle
     {
+        protected double _mileageLimit;
+        protected int _yearsInServiceLimit;
         public int ID { get; set; }
         public string Brand { get; set; }
         public Color Color { get; set; }
         public string Model { get; set; }
+        public double LeaseCostMultiplier { get; set; }
         public DateOnly ProductionYear { get; set; }
         public decimal Price { get; set; }
         public string RegistrationNumber { get; set; }
@@ -20,7 +23,7 @@ namespace dotnet_academy_hw2_leasing_company.models.Vehicles
         public DateTime ServiceStartTime { get; set; }
 
         protected Vehicle(int id, string brand, Color color, string model, DateOnly prodYear, decimal price,
-            string registrationNumber, DateTime serviceStartTime, double mileage = 0)
+            string registrationNumber, DateTime serviceStartTime, double mileage = 0, double leaseCostMultiplier = 1.0)
         {
             ID = id;
             Brand = brand;
@@ -31,9 +34,11 @@ namespace dotnet_academy_hw2_leasing_company.models.Vehicles
             RegistrationNumber = registrationNumber;
             ServiceStartTime = serviceStartTime;
             Mileage = mileage;
+            LeaseCostMultiplier = leaseCostMultiplier;
         }
 
         public abstract decimal GetCurrentValue();
+        public abstract bool HasExceededTenure();
 
     }
 }
