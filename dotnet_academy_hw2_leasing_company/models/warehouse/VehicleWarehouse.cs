@@ -12,7 +12,6 @@ namespace dotnet_academy_hw2_leasing_company.models.VehicleWarehouse
     internal class VehicleWarehouse
     {
         public ICollection<IVehicle> Vehicles { get; set; }
-        public VehicleWarehouse() { Vehicles = new List<IVehicle>(); }
         public VehicleWarehouse(ICollection<IVehicle> vehicles)
         {
             Vehicles = vehicles;
@@ -47,22 +46,6 @@ namespace dotnet_academy_hw2_leasing_company.models.VehicleWarehouse
         {
             var matchedVehicles = Vehicles.Where(v => v.DistanceLeftToMaintenance() <= 1000);
             return matchedVehicles;
-        }
-        public decimal? CalculateRentalCost(IVehicle vehicle)
-        {
-            if (vehicle is PassengerVehicle)
-            {
-                var passengerVehicle = vehicle as PassengerVehicle;
-                var cost = passengerVehicle.CalculateRentalCost(DateTime.Now, DateTime.Now.AddDays(7), 300, 3);
-                return cost;
-            }
-            if (vehicle is CargoVehicle) 
-            { 
-                var cargoVehicle = vehicle as CargoVehicle;
-                var cost = cargoVehicle.CalculateRentalCost(DateTime.Now, DateTime.Now.AddDays(7), 300, 1000);
-                return cost;
-            }
-            return null;
         }
     }
 }

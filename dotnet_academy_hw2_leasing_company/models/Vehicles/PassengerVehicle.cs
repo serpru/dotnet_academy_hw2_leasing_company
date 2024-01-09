@@ -41,9 +41,5 @@ namespace dotnet_academy_hw2_leasing_company.models.Vehicles
         {
             return _maintenanceThreshold - (Mileage % _maintenanceThreshold);
         }
-        public decimal CalculateRentalCost(DateTime tripStartDate, DateTime tripEndDate, double travelDistance, double userRating)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

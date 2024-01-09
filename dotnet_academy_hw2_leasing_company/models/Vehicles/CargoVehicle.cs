@@ -19,7 +19,6 @@ namespace dotnet_academy_hw2_leasing_company.models.Vehicles
             _maintenanceThreshold = 15000;
             _valueDropPercentage = 0.07;
         }
-        
         public override double DistanceLeftToMaintenance()
         {
             return _maintenanceThreshold - (Mileage % _maintenanceThreshold);
@@ -39,10 +38,6 @@ namespace dotnet_academy_hw2_leasing_company.models.Vehicles
             var isTimeExceeded = ServiceStartTime.AddYears(_yearsInServiceLimit) < DateTime.Now;
             var isMileageExceeded = Mileage > _mileageLimit;
             return isTimeExceeded || isMileageExceeded;
-        }
-        public decimal CalculateRentalCost(DateTime tripStartDate, DateTime tripEndDate, double travelDistance, double cargoWeight)
-        {
-            throw new NotImplementedException();
         }
     }
 }
