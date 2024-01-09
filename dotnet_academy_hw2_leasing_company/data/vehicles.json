@@ -1,0 +1,95 @@
+{
+  "vehicles": [
+    {
+      "$type": "passenger_vehicle",
+      "id": 1,
+      "brand_name": "Ford",
+      "color": "#32a852",
+      "model": "M1",
+      "lease_cost_multiplier": 1,
+      "production_year": 1995,
+      "price": 15000.20,
+      "registration_number": "DL123456",
+      "mileage": 2000.5,
+      "service_start_time": "2019-01-01T00:00:00"
+    },
+    {
+      "$type": "passenger_vehicle",
+      "id": 2,
+      "brand_name": "Nissan",
+      "color": "#992348",
+      "model": "M1",
+      "lease_cost_multiplier": 1,
+      "production_year": 1995,
+      "price": 12040.50,
+      "registration_number": "DL15721",
+      "mileage": 154500,
+      "service_start_time": "2023-10-25T00:00:00"
+    },
+    {
+      "$type": "passenger_vehicle",
+      "id": 3,
+      "brand_name": "Toyota",
+      "color": "#32a852",
+      "model": "T5",
+      "lease_cost_multiplier": 1,
+      "production_year": 1996,
+      "price": 28000.00,
+      "registration_number": "DL123572",
+      "mileage": 30000,
+      "service_start_time": "2019-08-11T00:00:00"
+    },
+    {
+      "$type": "cargo_vehicle",
+      "id": 4,
+      "brand_name": "Nissan",
+      "color": "#32a852",
+      "model": "MC1",
+      "lease_cost_multiplier": 1,
+      "production_year": 1989,
+      "price": 100000.00,
+      "registration_number": "DL923211",
+      "mileage": 150000,
+      "service_start_time": "2019-05-24T00:00:00"
+    },
+    {
+      "$type": "cargo_vehicle",
+      "id": 5,
+      "brand_name": "Ford",
+      "color": "#992348",
+      "model": "MC1",
+      "lease_cost_multiplier": 1,
+      "production_year": 1990,
+      "price": 120000.00,
+      "registration_number": "DL923531",
+      "mileage": 110350,
+      "service_start_time": "2018-01-22T00:00:00"
+    },
+    {
+      "$type": "cargo_vehicle",
+      "id": 6,
+      "brand_name": "Opel",
+      "color": "#32a852",
+      "model": "MC50",
+      "lease_cost_multiplier": 1,
+      "production_year": 2020,
+      "price": 155000.00,
+      "registration_number": "DL911532",
+      "mileage": 74500,
+      "service_start_time": "2020-11-22T00:00:00"
+    },
+    {
+      "$type": "cargo_vehicle",
+      "id": 7,
+      "brand_name": "Volvo",
+      "color": "#32a652",
+      "model": "V1",
+      "lease_cost_multiplier": 1,
+      "production_year": 2021,
+      "price": 155600.00,
+      "registration_number": "DL921332",
+      "mileage": 14000,
+      "service_start_time": "2020-11-22T00:00:00"
+    }
+  ]
+}
